@@ -16,9 +16,43 @@ const displayDate = () => {
 
 // Write a JavaScript program to convert a number to a string.
 
+const covertToString = () => {
+  
+  let nonConvertedNumber = document.getElementById("numberInput").value;
+  const convertedNumber = nonConvertedNumber.toString();
+  
+  if (typeof convertedNumber === 'string') {
+    console.log(convertedNumber + ' is now a string.');
+    document.getElementById("display-string-conversion").innerHTML = convertedNumber + " is now a string.";
+  }
+  else {
+    console.log("String conversion didn't work.");
+    document.getElementById("display-string-conversion").innerHTML = "String conversion didn't work.";
+  }
+}
+
+
 
 
 // Write a JavaScript program to convert a string to the number.
+
+
+const covertToNumber = () => {
+  
+  let nonConvertedString = document.getElementById("stringInput").value;
+  const convertedString = parseInt(stringInput);
+  
+  if (typeof convertedString === 'number') {
+    console.log(convertedNumber + ' is now a number.');
+    document.getElementById("display-number-conversion").innerHTML = convertedString + " is now a number.";
+  }
+  else {
+    console.log("Number conversion didn't work.");
+    document.getElementById("display-number-conversion").innerHTML = "Number conversion didn't work.";
+  }
+}
+
+
 
 
 
