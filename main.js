@@ -18,10 +18,10 @@ const displayDate = () => {
 
 const covertToString = () => {
   
-  let nonConvertedNumber = document.getElementById("numberInput").value;
+  const nonConvertedNumber = document.getElementById("numberInput").value;
   const convertedNumber = nonConvertedNumber.toString();
   
-  if (typeof convertedNumber === 'string') {
+  if (typeof convertedNumber === "string") {
     console.log(convertedNumber + ' is now a string.');
     document.getElementById("display-string-conversion").innerHTML = convertedNumber + " is now a string.";
   }
@@ -39,11 +39,13 @@ const covertToString = () => {
 
 const covertToNumber = () => {
   
-  let nonConvertedString = document.getElementById("stringInput").value;
+  const nonConvertedString = document.getElementById("stringInput").value;
   const convertedString = parseInt(stringInput);
+
+  console.log(typeof convertedString);
   
-  if (typeof convertedString === 'number') {
-    console.log(convertedNumber + ' is now a number.');
+  if (typeof convertedString === "number") {
+    console.log(convertedString + ' is now a number.');
     document.getElementById("display-number-conversion").innerHTML = convertedString + " is now a number.";
   }
   else {
@@ -57,28 +59,107 @@ const covertToNumber = () => {
 
 
 // Write a JavaScript program that takes in different datatypes and prints out whether they are a:
-  // * Boolean
-  // * Null
-  // * Undefined
-  // * Number
+  // * boolean
+  // * null
+  // * undefined
+  // * number
   // * NaN
-  // * String
+  // * string
+
+
+  const displayDataType = () => {
+  
+    const userInput = document.getElementById("userInput").value;
+    const inputDataType = typeof userInput;
+  
+    console.log(inputDataType);
+    
+    if (inputDataType === "boolean") {
+      document.getElementById("display-data-type").innerHTML = "Your input's datatype is a boolean";
+    }
+    else if (inputDataType === "null") {
+      document.getElementById("display-data-type").innerHTML = "Your input's datatype is null.";
+    }
+    else if (inputDataType === "ndefined") {
+      document.getElementById("display-data-type").innerHTML = "Your input's datatype is undefined.";
+    }
+    else if (inputDataType === "number") {
+      document.getElementById("display-data-type").innerHTML = "Your input's datatype is a number.";
+    }
+    else if (inputDataType === "NaN") {
+      document.getElementById("display-data-type").innerHTML = "Your input's datatype is NaN (not a number).";
+    }
+    else if (inputDataType === "string") {
+      document.getElementById("display-data-type").innerHTML = "Your input's datatype is a string.";
+    }
+    else {
+      document.getElementById("display-data-type").innerHTML = "Error.";
+    }
+  }
+  
   
 
   
 // Write a JavaScript program that adds 2 numbers together.
 
+const addTwoNumbers = (num1, num2) => {
+
+  num1 = document.getElementById("num1").value;
+  num2 = document.getElementById("num2").value;
+
+  const sum = parseInt(num1) + parseInt(num2); 
+  console.log(sum);
+
+  document.getElementById("display-sum").innerHTML = sum;
+
+}
+
 
 
 // Write a JavaScript program that runs only when 2 things are true.
 
+const bothTrue = (a, b) => {
+
+  if (a && b) {
+    document.getElementById("display-bothTrue").innerHTML = "Your inputs are both truthy.";
+  }
+  else {
+    document.getElementById("display-bothTrue").innerHTML = "Your inputs aren't both truthy.";
+  }
+
+}
 
 
 // Write a JavaScript program that runs when 1 of 2 things are true.
 
+const one = (a && !b || b && !a) => {
+
+  if (a === b) {
+    document.getElementById("display-bothTrue").innerHTML = "One input is truthy.";
+  }
+  else {
+    document.getElementById("display-bothTrue").innerHTML = "Both or none of your inputs are truthy";
+  }
+
+}
+
 
 
 // Write a JavaScript program that runs when both things are not true.  
+
+
+const one = (!a && !b) => {
+
+  if (a === b) {
+    document.getElementById("display-bothTrue").innerHTML = "Your inputs are both falsey.";
+  }
+  else {
+    document.getElementById("display-bothTrue").innerHTML = "Your inputs aren't both falsey.";
+  }
+
+}
+
+
 
 // ***************************
 //         PART TWO
