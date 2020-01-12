@@ -40,9 +40,7 @@ const covertToString = () => {
 const covertToNumber = () => {
   
   const nonConvertedString = document.getElementById("stringInput").value;
-  const convertedString = parseInt(stringInput);
-
-  console.log(typeof convertedString);
+  const convertedString = Number(nonConvertedString);
   
   if (typeof convertedString === "number") {
     console.log(convertedString + ' is now a number.');
@@ -118,46 +116,91 @@ const addTwoNumbers = (num1, num2) => {
 
 // Write a JavaScript program that runs only when 2 things are true.
 
-const bothTrue = (a, b) => {
+const bothTrue = (input1, input2) => {
+
+  const a = document.getElementById("input1").value;
+  const b = document.getElementById("input2").value;
 
   if (a && b) {
-    document.getElementById("display-bothTrue").innerHTML = "Your inputs are both truthy.";
+    document.getElementById("display-bothTrue").innerHTML = "Yes, your inputs are both truthy.";
   }
   else {
-    document.getElementById("display-bothTrue").innerHTML = "Your inputs aren't both truthy.";
+    document.getElementById("display-bothTrue").innerHTML = "No, your inputs aren't both truthy.";
   }
-
 }
 
 
 // Write a JavaScript program that runs when 1 of 2 things are true.
 
-const one = (a && !b || b && !a) => {
+const oneTrue = (input3, input4) => {
 
-  if (a === b) {
-    document.getElementById("display-bothTrue").innerHTML = "One input is truthy.";
+  let a = document.getElementById("input3").value.trim().toLowerCase();
+  let b = document.getElementById("input4").value.trim().toLowerCase();
+
+  console.log(a);
+  console.log(b);
+
+
+  if (a == "null" || a == "nan" || a == "undefined" || a == "false" || a == "" || a == '' || a == "0" || a == "-0") {
+    a = null;
+  }
+  
+  if (b == "null" || b == "nan" || b == "undefined" || b == "false" || b == "" || b == '' || b == "0" || b == "-0") {
+    b = null;
+  }
+
+
+  console.log(a);
+  console.log(b);
+
+  console.log(typeof a);
+  console.log(typeof b);
+
+  if ((a && !b) || (!a && b)) {
+    document.getElementById("display-oneTrue").innerHTML = "Yes, one of your inputs is truthy.";
   }
   else {
-    document.getElementById("display-bothTrue").innerHTML = "Both or none of your inputs are truthy";
+    document.getElementById("display-oneTrue").innerHTML = "No, both or none of your inputs are truthy.";
   }
-
 }
 
 
 
 // Write a JavaScript program that runs when both things are not true.  
 
+const bothFalse = (input5, input6) => {
 
-const one = (!a && !b) => {
+  let a = document.getElementById("input5").value.trim().toLowerCase();
+  let b = document.getElementById("input6").value.trim().toLowerCase();
 
-  if (a === b) {
-    document.getElementById("display-bothTrue").innerHTML = "Your inputs are both falsey.";
+  console.log(a);
+  console.log(b);
+
+
+  if (a == "null" || a == "nan" || a == "undefined" || a == "false" || a == "" || a == '' || a == "0" || a == "-0") {
+    a = null;
+  }
+  
+  if (b == "null" || b == "nan" || b == "undefined" || b == "false" || b == "" || b == '' || b == "0" || b == "-0") {
+    b = null;
+  }
+
+  console.log(a);
+  console.log(b);
+
+  console.log(typeof a);
+  console.log(typeof b);
+
+  if (!a && !b) {
+    document.getElementById("display-bothFalse").innerHTML = "Yes, both of your inputs are falsey.";
   }
   else {
-    document.getElementById("display-bothTrue").innerHTML = "Your inputs aren't both falsey.";
+    document.getElementById("display-bothFalse").innerHTML = "No, your inputs are not both falsey.";
   }
-
 }
+
+
+// }
 
 
 
